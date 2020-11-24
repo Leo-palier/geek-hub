@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Game.create(name: 'Sonic', console: 'megadrive', year: 1992, price: 30)
-Game.create(name: 'Mario', console: 'Nintendo', year: 1993, price: 25)
-Game.create(name: 'Zelda', console: 'SuperNess', year: 1994, price: 40)
-Game.create(name: 'MegaMan', console: 'megadrive', year: 1990, price: 20)
-Game.create(name: 'GranTurismo', console: 'Playstation', year: 1997, price: 60)
 
-User.create(username: 'Toto', email:'toto@gmail.com', first_name: 'Jean', last_name:'Bon')
-User.create(username: 'Titi', email:'titi@gmail.com', first_name: 'Robert', last_name:'To')
-User.create(username: 'Tutu', email:'tutu@gmail.com', first_name: 'Martin', last_name:'Nez')
+User.create(email:'toto@gmail.com', password: "toto13")
+User.create(email:'titi@gmail.com', password: "titi13")
+User.create(email:'tutu@gmail.com', password: "tutu13")
+
+Game.create!(name: 'Sonic', console: 'megadrive', year: 1992, price: 30, user_id: 1)
+Game.create!(name: 'Mario', console: 'Nintendo', year: 1993, price: 25, user_id: 2)
+Game.create!(name: 'Zelda', console: 'SuperNess', year: 1994, price: 40, user_id: 1)
+Game.create!(name: 'MegaMan', console: 'megadrive', year: 1990, price: 20, user_id: 3)
+Game.create!(name: 'GranTurismo', console: 'Playstation', year: 1997, price: 60, user_id: 2)
