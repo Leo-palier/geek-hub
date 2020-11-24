@@ -1,3 +1,4 @@
+<%= render 'shared/banner' %>
 <div class="home">
   <div class="container">
     <div class="cards">
@@ -10,21 +11,22 @@
       <% end %>
     </div>
     <div class= "container about">
-      <h2 class="text-center" id= "about us"><%= link_to "A propos", "#", class: "btn" %></h2>
+      <h2 class="text-center" id= "apropos"><%= link_to "A propos", "#", class: "btn" %></h2>
       <hr>
       <p>Quam ob rem ut ii qui superiores sunt submittere se debent in amicitia, sic quodam modo inferiores extollere. Sunt enim quidam qui molestas amicitias faciunt, cum ipsi se contemni putant; quod non fere contingit nisi iis qui etiam contemnendos se arbitrantur; qui hac opinione non modo verbis sed etiam opere levandi sunt.
         Post quorum necem nihilo lenius ferociens Gallus ut leo cadaveribus pastus multa huius modi scrutabatur. quae singula narrare non refert, me professione modum, quod evitandum est, excedamus.
         Saepissime igitur mihi de amicitia cogitanti maxime illud considerandum videri solet, utrum propter imbecillitatem atque inopiam desiderata sit amicitia, ut dandis recipiendisque meritis quod quisque minus per se ipse posset, id acciperet ab alio vicissimque redderet, an esset hoc quidem proprium amicitiae, sed antiquior et pulchrior et magis a natura ipsa profecta alia causa. Amor enim, ex quo amicitia nominata est, princeps est ad benevolentiam coniungendam. Nam utilitates quidem etiam ab iis percipiuntur saepe qui simulatione amicitiae coluntur et observantur temporis causa, in amicitia autem nihil fictum est, nihil simulatum et, quidquid est, id est verum et voluntarium.</p>
     </div>
     <form class= "container">
-      <h2 class="text-center">Contact Us</h2>
+      <h2 class="text-center" id="contact">Contact Us</h2>
+      <hr>
       <div class="form-group">
         <label for="exampleInputEmail1">Name</label>
         <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Eneter email">
+        <input type="email" class="form-control" id="email" placeholder="Enter email">
         <small id="message" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
