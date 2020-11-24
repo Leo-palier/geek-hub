@@ -12,3 +12,23 @@
   background: #9d0191;
   color: white;
 }
+
+.btn-warning {
+  margin-top: 10px;
+  margin-bottom: 16px;
+  background : #fecd1a;
+  border-radius: 15px;
+}
+
+.btn-warning:hover {
+  background : #fecd1a;
+}
+
+.btn-row {
+ display:flex;
+  justify-content: space-between;
+}
+
+.btn-row .btn-sign {
+	margin-top: 10px;
+}

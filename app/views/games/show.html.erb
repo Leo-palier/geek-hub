@@ -1,9 +1,21 @@
-
 <div class="container">
-	<h1><%= @game.name %> </h1>
-
-<p><%= @game.year %></p>	  
-<p><%= @game.console %> </p>	
-<p><%= @game.price %> </p>	
-<%= link_to "Edit a game", edit_game_path(@game) %> | <%= link_to "Games list", root_path %>
+	<div class="card-trip">
+		<img src="<%= cl_image_path @game.photo.key %>" />
+		<div class="card-trip-infos">
+			<div>
+				<h2><%= @game.name %></h2>
+				<p>Platform : <%= @game.console %> - Released in <%= @game.year %></p>
+			</div>
+			<h2 class="card-trip-pricing"><%= @game.price %>€</h2>
+			<img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+		</div>
+	</div>
+	<div class="btn-row">
+		<div class="btn btn-warning">
+			<%= link_to "Edit the offer", edit_game_path(@game) %>
+		</div>
+		<div class="btn-sign">
+			<%= link_to "Buy", "#" %>
+		</div>
+	</div>
 </div>
