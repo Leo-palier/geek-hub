@@ -96,8 +96,25 @@
   -webkit-text-stroke-color: black;
 }
 
-.cards .fas {
-  display: inline-block;
-  padding: 0 50px;
+.icons {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.icons a {
   color: blue;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.icons .fa-trash {
+  color: #fd3a69;
+}
+.icons .fa-cogs {
+  color: #9d0191;
+}
+
+.icons .fas:hover {
+  color: rgb(63, 45, 126);
 }

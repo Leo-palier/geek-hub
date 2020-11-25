@@ -25,6 +25,11 @@
   margin-bottom: 25px;
   text-align: center;
 }
+
+.login .form-actions:hover {
+  background-color: rgb(63, 45, 126);
+}
+
 .login .form-actions input {
   color: white;
 }
@@ -42,6 +47,11 @@
   margin-bottom: 25px;
   text-align: center;
 }
+
+.signup .form-actions:hover {
+  background-color: rgb(63, 45, 126);
+}
+
 .signup .form-actions input {
   color: white;
 }
@@ -81,6 +91,10 @@
   padding: 10px;
 }
 
+.game .form-actions input:hover {
+  background-color: rgb(63, 45, 126);
+}
+
 .edit-game {
   max-width: 600px;
   margin-top: 50px;
@@ -97,4 +111,8 @@
   text-align: center;
   border: none;
   padding: 10px;
+}
+
+.edit-game .form-actions input:hover {
+  background-color: rgb(63, 45, 126);
 }

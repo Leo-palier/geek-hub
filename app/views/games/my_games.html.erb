@@ -1,28 +1,30 @@
-<div class="home">
-  <div class="container">
-    <div class="mygames">
-      <h1>Welcome <%= @user.username %></h1>
-      <h2>My Games</h2>
-      <div class="btn add-game">
-        <%= link_to "Add a game", new_game_path %>
-      </div>
+<div class="container">
+  <div class="mygames">
+    <h1>Welcome <%= @user.username %></h1>
+    <h2>My Games</h2>
+    <div class="btn add-game">
+      <%= link_to "Add a game", new_game_path %>
     </div>
-    <div class="cards">
-      <% @games.each do |game| %>
-        <% if game.photo.attached? %>
+  </div>
+  <div class="cards">
+    <% @games.each do |game| %>
+      <% if game.photo.attached? %>
+        <div>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
+            <%= game.name%>
+          </div>
           <%= link_to game_path(game) do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
-              <%= game.name%>
+            <div class="icons">
+              <%= link_to game_path(game), method: :delete, data: {confirm: "Are you sure ?"} do %>
+                <i class="fas fa-trash fa-2x"></i>
+              <% end %>
+              <%= link_to edit_game_path(game) do %>
+                <i class="fas fa-cogs fa-2x"></i>
+              <% end %>
             </div>
-            <%= link_to game_path(game), method: :delete, data: {confirm: "Are you sure ?"} do %>
-            <i class="fas fa-trash fa-2x"></i>
-            <% end %>
-             <%= link_to edit_game_path(game) do %>
-            <i class="fas fa-cogs fa-2x"></i>
-            <% end %>
-          <% end %>
+          </div>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
