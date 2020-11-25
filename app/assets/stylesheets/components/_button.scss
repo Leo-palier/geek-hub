@@ -1,34 +1,45 @@
-.btn-sign {
-  color: white;
-  padding: 8px 24px;
+.btn-buy,
+.btn-edit {
+  font-size: 24px;
+  padding: 8px 8px;
   border-radius: 15px;
   background: #9d0191;
   transition: background 0.3s ease;
-  font-size: 24px;
   border: 2px solid white;
+  text-align: center;
 }
 
-.btn-sign:hover {
-  background: #9d0191;
+.btn-buy:hover,
+.btn-edit:hover {
+  background: #fecd1a;
+}
+.btn-buy a:hover,
+.btn-edit a:hover {
+  color: blue;
+}
+.edit-offer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
+.btn-edit {
+  width: 180px;
+}
+
+.btn-buy {
+  width: 100px;
+}
+
+.btn-buy a,
+.btn-edit a {
+  text-decoration: none;
   color: white;
 }
 
-.btn-warning {
-  margin-top: 10px;
-  margin-bottom: 16px;
-  background : #fecd1a;
-  border-radius: 15px;
-}
-
-.btn-warning:hover {
-  background : #fecd1a;
-}
-
-.btn-row {
- display:flex;
-  justify-content: space-between;
-}
-
-.btn-row .btn-sign {
-	margin-top: 10px;
+.one-game {
+  max-width: 700px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
