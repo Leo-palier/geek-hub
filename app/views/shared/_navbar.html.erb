@@ -19,7 +19,7 @@
   <div class="collapse navbar-collapse align-right" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item active">Welcome <%= @user.username %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://images.unsplash.com/photo-1602620502036-e52519d58d92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
