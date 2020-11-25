@@ -1,8 +1,12 @@
 <div class="home">
   <div class="container">
-  	<h1><%= @user.username %></h1>
-    <h2>My Games</h2>
-    <%= link_to "Add a game", new_game_path %>
+    <div class="mygames">
+      <h1>Welcome <%= @user.username %></h1>
+      <h2>My Games</h2>
+      <div class="btn add-game">
+        <%= link_to "Add a game", new_game_path %>
+      </div>
+    </div>
     <div class="cards">
       <% @games.each do |game| %>
         <% if game.photo.attached? %>
@@ -12,6 +16,7 @@
         <% end %>
       <% end %>
     </div>
-
-</div>
+    <i class="fas fa-trash fa-2x"></i>
+    <i class="fas fa-cogs fa-2x"></i>
+  </div>
 </div>

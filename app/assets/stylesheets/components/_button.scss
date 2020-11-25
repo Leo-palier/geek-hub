@@ -56,3 +56,48 @@
   text-decoration: none;
   color: white;
 }
+
+.add-game {
+  font-size: 24px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  background: #fecd1a;
+  border: 2px solid white;
+  text-align: center;
+}
+
+.add-game a {
+  text-decoration: none;
+  color: blue;
+}
+
+.add-game:hover {
+  background: #9d0191;
+}
+.add-game a:hover {
+  color: white;
+}
+
+.mygames h1 {
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.mygames h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 55px;
+  font-family: "Ribeye", cursive;
+  color: #fecd1a;
+  -webkit-text-fill-color: #fecd1a; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
+
+.fas {
+  display: inline-block;
+  padding: 0 55px;
+  color: blue;
+}
