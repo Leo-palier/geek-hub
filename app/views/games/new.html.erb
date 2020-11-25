@@ -1,10 +1,13 @@
-<div class="container">
-<%= simple_form_for(@game) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :year %>
-  <%= f.input :console %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container game">
+  <h2>Add a new game</h2>
+  <%= simple_form_for(@game) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :year %>
+    <%= f.input :console %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file %>
+    <div class="form-actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
 </div>

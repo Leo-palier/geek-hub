@@ -1,13 +1,25 @@
-.about h2 .btn {
+.apropos h2 {
   font-size: 36px;
+  display: flex;
+  justify-content: center;
   background-color: #fecd1a;
-  border-radius: 15px;
+  width: 200px;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-.about {
-  padding-top: 40px;
-}
-
-.about h2 {
-  padding-bottom: 20px;
+.contact h2 {
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  background-color: #fecd1a;
+  width: 200px;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 70px;
 }
