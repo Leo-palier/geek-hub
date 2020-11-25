@@ -1,0 +1,15 @@
+<div class="home">
+  <div class="container">
+  	<h1>My Games</h1>
+    <div class="cards">
+      <% @games.each do |game| %>
+        <% if game.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
+            <%= game.name%><%= link_to "🔍", game_path(game)  %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+</div>
+</div>

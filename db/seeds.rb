@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email:'toto@gmail.com', password: "toto13")
-User.create(email:'titi@gmail.com', password: "titi13")
-User.create(email:'tutu@gmail.com', password: "tutu13")
+User.create(username: "Totodu13", email:'toto@gmail.com', password: "toto13")
+User.create(username: "Titi13", email:'titi@gmail.com', password: "titi13")
+User.create(username: "Tutudu13", email:'tutu@gmail.com', password: "tutu13")
 
 Game.create!(name: 'Sonic', console: 'megadrive', year: 1992, price: 30, user_id: 1)
 Game.create!(name: 'Mario', console: 'Nintendo', year: 1993, price: 25, user_id: 2)
