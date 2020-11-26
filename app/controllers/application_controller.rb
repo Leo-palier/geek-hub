@@ -1,16 +1,34 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate_user!, :set_user
-    def configure_permitted_parameters
-        # For additional fields in app/views/devise/registrations/new.html.erb
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
-    
-        # For additional in app/views/devise/registrations/edit.html.erb
-        devise_parameter_sanitizer.permit(:account_update, keys: [:username])
-      end
+  include Pundit
 
-       private
+  before_action :authenticate_user!
+  before_action :set_user
+
+  after_action :verify_authorized, except: %i[index show], unless: :devise_controller?
+  after_action :verify_policy_scoped, only: %i[index show], unless: :devise_controller?
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  # def configure_permitted_parameters
+  #     # For additional fields in app/views/devise/registrations/new.html.erb
+  #     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+
+  #     # For additional in app/views/devise/registrations/edit.html.erb
+  #     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+  # end
+
+  private
 
   def set_user
     @user = current_user
+  end
+
+  # def skip_pundit?
+  #   devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^page)/
+  # end
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(root_path)
   end
 end
