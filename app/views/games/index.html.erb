@@ -1,7 +1,7 @@
 <%= render 'shared/banner' %>
 <div class="home">
   <div class="container">
-    <div class="cards">
+    <div class="cards" id="game-list">
       <% @games.each do |game| %>
         <% if game.photo.attached? %>
           <%= link_to game_path(game) do %>
