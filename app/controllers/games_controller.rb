@@ -6,11 +6,8 @@ class GamesController < ApplicationController
     def index
         @games = policy_scope(Game).order(created_at: :desc)
         @user = current_user
-        games_filter = params[:games_filter]
-        if games_filter.present?
-        if games_filter[:search].present?
-          @games = Game.search_by(games_filter[:search])
-        end
+        if params[:games_filter].present?
+          @games = Game.search_by(params[:games_filter][:search])
         else
           @games = Game.all
         end
