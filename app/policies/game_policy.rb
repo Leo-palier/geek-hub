@@ -18,7 +18,7 @@ class GamePolicy < ApplicationPolicy
   end
 
   def buy?
-  	!is_owner?
+    !is_owner?
   end
 
   def update?
@@ -31,7 +31,7 @@ class GamePolicy < ApplicationPolicy
     record.user == user
   end
 
-private
+  private
 
   def is_owner?
     user == record.user

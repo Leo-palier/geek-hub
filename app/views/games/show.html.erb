@@ -6,6 +6,9 @@
         <h2><%= @game.name %></h2>
         <p>Platform : <%= @game.console %></p>
         <p>Sold by <%= @game.user.username%></p>
+        <hr>
+        <h3>Description</h3>
+        <p><%= @game.description%></p>
       </div>
       <h2 class="card-trip-pricing"><%= @game.price %>€</h2>
       <% if @game.user.photo.attached? %>
