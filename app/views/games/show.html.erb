@@ -11,11 +11,15 @@
     </div>
   </div>
   <div class="edit-offer">
+       <% if policy(@game).edit? %>
     <div class="btn-edit">
       <%= link_to "Edit the offer", edit_game_path(@game) %>
     </div>
+  <% end %>
+    <% if policy(@game).buy? == false %>
     <div class="btn-buy">
       <%= link_to "Buy", buy_game_path(@game) %>
     </div>
+      <% end %>
   </div>
 </div>
