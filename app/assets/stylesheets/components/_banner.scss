@@ -18,3 +18,29 @@
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: white;
 }
+
+.search {
+  height: 2.8rem;
+  padding: 10px;
+  margin: 10px;
+  width: 280px;
+  display: inline-block;
+  margin-top: -50px;
+}
+
+.search .btn {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.searchinput {
+  border: 1px solid blue;
+}
+
+.searchinput:focus {
+  border: 1px solid #fecd1a;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}

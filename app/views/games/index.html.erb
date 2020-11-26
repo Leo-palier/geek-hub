@@ -4,11 +4,11 @@
     <div class="cards">
       <% @games.each do |game| %>
         <% if game.photo.attached? %>
-        <%= link_to game_path(game) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
-            <%= game.name%>
-          </div>
-            <% end %>
+          <%= link_to game_path(game) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
+              <%= game.name%>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

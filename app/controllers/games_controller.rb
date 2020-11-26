@@ -4,6 +4,14 @@ class GamesController < ApplicationController
 
     def index
         @games = Game.all
+        games_filter = params[:games_filter]
+        if games_filter.present?
+        if games_filter[:search].present?
+          @games = Game.search_by(games_filter[:search])
+        end
+        else
+          @games = Game.all
+        end
     end
 
     def my_games
