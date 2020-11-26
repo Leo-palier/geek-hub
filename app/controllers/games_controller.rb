@@ -17,13 +17,13 @@ class GamesController < ApplicationController
         end
     end
 
+    def show
+        @transaction = Transaction.new
+    end
 
   def my_games
     @games = current_user.games
     authorize @games
-  end
-
-  def show
   end
 
   def new
@@ -46,7 +46,6 @@ class GamesController < ApplicationController
   end
 
   def update
-
     @game.update(game_params)
     redirect_to game_path(@game)
   end
