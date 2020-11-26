@@ -9,10 +9,49 @@
   text-align: center;
 }
 
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.btn-checkout {
+font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background: #9d0191;
+  text-align: center;
+  width: 140px;
+
+}
+
+.btn-checkout a {
+  text-decoration: none;
+  color:white;
+
+}
+
+.shopping {
+font-size: 15px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background: #9d0191;
+  text-align: center;
+  width: 200px;
+   line-height: 3rem;
+
+}
+
+.shopping a {
+  text-decoration: none;
+color: white;
+}
+
 .btn-buy:hover,
 .btn-edit:hover {
   background: #fecd1a;
 }
+
 .btn-buy a:hover,
 .btn-edit a:hover {
   color: blue;
@@ -68,7 +107,7 @@
 
 .add-game a {
   text-decoration: none;
-  color: blue;
+  color: whiteÒ;
 }
 
 .add-game:hover {
@@ -103,7 +142,7 @@
 }
 
 .icons a {
-  color: blue;
+  color: white;
   display: inline-block;
   margin: 0 10px;
 }
