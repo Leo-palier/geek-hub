@@ -45,6 +45,10 @@ class GamesController < ApplicationController
         redirect_to my_games_games_path
     end
 
+    def buy
+        @game = Game.find(params[:id])
+    end
+
     private
 
     def game_params

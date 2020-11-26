@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   	collection do
   		get :my_games
   	end
+  	member do
+  			get :buy
+  		end
   end
 end
