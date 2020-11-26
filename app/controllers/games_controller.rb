@@ -1,5 +1,4 @@
 class GamesController < ApplicationController
-
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_game_policy, only: %i[show edit update destroy buy]
 
@@ -13,9 +12,9 @@ class GamesController < ApplicationController
         end
     end
 
-    def show
-        @transaction = Transaction.new
-    end
+  def show
+    @transaction = Transaction.new
+  end
 
   def my_games
     @games = current_user.games
@@ -62,6 +61,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name, :year, :console, :price, :photo)
+    params.require(:game).permit(:name, :description, :console, :price, :photo)
   end
 end

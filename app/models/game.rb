@@ -6,8 +6,8 @@ class Game < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by,
-    against: [ :name, :console ],
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: %i[name console],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

@@ -10,21 +10,19 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-
   private
 
   def configure_permitted_parameters
-      # For additional fields in app/views/devise/registrations/new.html.erb
-      devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :username, :photo) }
+    # For additional fields in app/views/devise/registrations/new.html.erb
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :username, :photo) }
 
-      # For additional in app/views/devise/registrations/edit.html.erb
-      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :photo, :email, :password, :password_confirmation, :current_password) }
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :photo, :email, :password, :password_confirmation, :current_password) }
   end
 
   def set_user
     @user = current_user
   end
-
 
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
