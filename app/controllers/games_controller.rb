@@ -43,6 +43,7 @@ class GamesController < ApplicationController
 
     def update
     	  @game = Game.find(params[:id])
+        end
 
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_game_policy, only: %i[show edit update destroy buy]
