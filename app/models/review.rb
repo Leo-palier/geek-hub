@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :user
   validates :content, presence: true
-  validates :rating, presence: true, inclusion: { in: %w(0 1 2 3 4 5) }
+  validates :rating, presence: true, inclusion: { in: 0..5, message: " should be between 0 to 5" }
 end

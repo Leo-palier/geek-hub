@@ -1,4 +1,4 @@
-class GamePolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -10,14 +10,6 @@ class GamePolicy < ApplicationPolicy
   end
 
   def create?
-    true
-  end
-
-  def my_games?
-    true
-  end
-
-  def my_profile?
     true
   end
 
