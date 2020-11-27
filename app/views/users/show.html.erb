@@ -15,53 +15,50 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-8">
-      <div class="review-block">
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="review-block-img">
-              <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
+    <% if @user.reviews.blank? %>
+      Be the first to leave a review for <%= @user.username %>
+    <% else %>
+      <% @user.reviews.each do |review| %>
+        <div class="col-sm-12 col-md-8">
+          <div class="review-block">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="review-block-img">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
+                </div>
+                <div class="review-block-name"><a href="#">username</a></div>
+              </div>
+              <div class="col-sm-9">
+                <div class="review-block-rate">
+                  <p><%= review.rating %> / 5
+                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                  </p>
+                </div>
+                <div class="review-block-description">
+                  <p><%= review.content %></p>
+                </div>
+              </div>
+              <hr>
             </div>
-            <div class="review-block-name"><a href="#">username</a></div>
-          </div>
-          <div class="col-sm-9">
-            <div class="review-block-rate">
-              <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="review-block-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. </div>
           </div>
         </div>
-        <hr>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-<div id="reviews" class="container">
-  <% if @user.reviews.blank? %>
-    Be the first to leave a review for <%= @user.username %>
-  <% else %>
-    <div class="reviews">
-      <% @user.reviews.each do |review| %>
-        <p><%= review.rating %></p>
-        <p><%= review.content %></p>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </section>
 </div>
 <div class="container">
   <%= simple_form_for([ @user, @review ]) do |f| %>
