@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   resources :games do
   	resources :reviews, only: :create
   	collection do
-  		get :my_profile, :my_games 
+  		get :my_games 
   	end
   	member do
   		get :buy
   	end
+  end
+  resources :users, only: :show do
+    resources :reviews, only: :create
   end
 end

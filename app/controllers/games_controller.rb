@@ -3,16 +3,15 @@ class GamesController < ApplicationController
   before_action :set_game_policy, except: :my_profile
   before_action :set_game_policy, only: %i[show edit update destroy buy]
 
-
-    def index
-        @games = policy_scope(Game).order(created_at: :desc)
-        @user = current_user
-        if params[:games_filter].present?
-          @games = Game.search_by(params[:games_filter][:search])
-        else
-          @games = Game.all
-        end
+  def index
+    @games = policy_scope(Game).order(created_at: :desc)
+    @user = current_user
+    if params[:games_filter].present?
+      @games = Game.search_by(params[:games_filter][:search])
+    else
+      @games = Game.all
     end
+  end
 
   def show
     @transaction = Transaction.new
@@ -24,8 +23,6 @@ class GamesController < ApplicationController
   end
 
   def my_profile
-    @games = current_user.games
-    authorize @games  
   end
 
   def new

@@ -1,18 +1,13 @@
 class ReviewsController < ApplicationController
-
-	 def show
-    @game.user = Game.find(params[:id])
-    @review = Review.new  # <-- You need this now.
-  end
-
-	 def create
-    @game.user = Game.find(params[:user_id])
+  def create
+    @user = policy_scope(User).find(params[:user_id])
+    authorize @user
     @review = Review.new(review_params)
     @review.user = @user
     if @review.save
-      redirect_to my_games_games_path
+      redirect_to user_path(@user)
     else
-      render my_games_games_path
+      render 'users/show'
     end
   end
 
