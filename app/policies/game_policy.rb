@@ -17,6 +17,10 @@ class GamePolicy < ApplicationPolicy
     true
   end
 
+  def my_profile?
+  	true
+  end
+
   def buy?
     !is_owner?
   end
