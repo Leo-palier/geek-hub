@@ -5,9 +5,7 @@
       <div>
         <h2><%= @game.name %></h2>
         <p>Platform : <%= @game.console %></p>
-         <% if policy(@user).show? %>
         <p>Sold by <%= link_to @game.user.username, user_path(@game.user) %></p>
-        <% end %>
         <hr>
         <h3>Description</h3>
         <p><%= @game.description%></p>

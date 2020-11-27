@@ -26,7 +26,7 @@
                 <div class="review-block-img">
                   <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
                 </div>
-                <div class="review-block-name"><a href="#">username</a></div>
+                <div class="review-block-name"><a href="#"> <%= review.creator.username %> </a></div>
               </div>
               <div class="col-sm-9">
                 <div class="review-block-rate">
@@ -49,7 +49,7 @@
                   </p>
                 </div>
                 <div class="review-block-description">
-                  <p><%= review.content %></p>
+                  <p><%= review.description %></p>
                 </div>
               </div>
               <hr>
@@ -63,7 +63,7 @@
 <div class="container">
   <%= simple_form_for([ @user, @review ]) do |f| %>
     <%= f.input :rating%>
-    <%= f.input :content, as: :text %>
+    <%= f.input :description, as: :text %>
     <%= f.button :submit %>
   <% end %>
 </div>
