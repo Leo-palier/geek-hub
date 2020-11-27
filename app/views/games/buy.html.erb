@@ -20,16 +20,13 @@
               <tr>
                 <td data-th="Product">
                   <div class="row">
-                    <div class="col-md-3 text-left">
-                      <img src="name="game[photo]" id="game_photo"" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                    </div>
-                    <div class="col-md-9 text-left mt-sm-2">
-                      <h4>name="game[name]" id="game_name"</h4>
-                      <p class="font-weight-light">name="game[console]" id="game_console" &amp; name="game[year]" id="game_year"</p>
+                    <div class="col-md-12 text-left mt-sm-2">
+                      <h4><%= @game.name%></h4>
+                      <p class="font-weight-light"><%= @game.console%> <%= @game.year%></p>
                     </div>
                   </div>
                 </td>
-                <td data-th="Price">name="game[price]" id="game_price"</td>
+                <td data-th="Price"><%= @game.price%></td>
                 <td data-th="Quantity">
                   <input type="number" class="form-control form-control-lg text-center" value="1">
                 </td>
@@ -48,7 +45,7 @@
           </table>
           <div class="float-right text-right">
             <h4>Subtotal:</h4>
-            <h1>$49.00</h1>
+            <h1><%= @game.price%> €</h1>
           </div>
         </div>
       </div>
