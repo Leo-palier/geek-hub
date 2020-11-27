@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_game_policy, except: :my_profile
   before_action :set_game_policy, only: %i[show edit update destroy buy]
+
 
     def index
         @games = policy_scope(Game).order(created_at: :desc)
@@ -19,6 +21,11 @@ class GamesController < ApplicationController
   def my_games
     @games = current_user.games
     authorize @games
+  end
+
+  def my_profile
+    @games = current_user.games
+    authorize @games  
   end
 
   def new
