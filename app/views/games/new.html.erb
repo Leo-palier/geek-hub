@@ -2,7 +2,7 @@
   <h2>Add a new game</h2>
   <%= simple_form_for(@game) do |f| %>
     <%= f.input :name %>
-    <%= f.input :console %>
+    <%= f.input :console,collection: %w( Nintendo Super\ Nintendo Nintendo\ 64 Nintendo\ Switch Master\ System MegaDrive Playstation Playstation\ 4 XBox ) %>
     <%= f.input :price %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
