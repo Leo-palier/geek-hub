@@ -16,5 +16,3 @@ class ReviewPolicy < ApplicationPolicy
     user == record.user
   end
 end
-
-end
