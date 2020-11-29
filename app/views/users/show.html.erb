@@ -6,11 +6,11 @@
         <div class="card-header">
           <div class="card-header-menu">
           </div>
-          <div class="card-header-headshot"></div>
+          <div class="card-header-headshot" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @user.photo.key %>)"></div>
         </div>
         <div class="card-content">
           <div class="card-content-member">
-            <h4 class="card-user">username</h4>
+            <h4 class="card-user"> <%=  @user.username %></h4>
           </div>
         </div>
       </div>
@@ -23,30 +23,15 @@
           <div class="review-block">
             <div class="row">
               <div class="col-sm-3">
+  
                 <div class="review-block-img">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
+                   <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
                 </div>
-                <div class="review-block-name"><a href="#"> <%= review.creator.username %> </a></div>
+                <div class="review-block-name"><a href="#"> <%= @review.creator_id %> </a></div>
               </div>
               <div class="col-sm-9">
                 <div class="review-block-rate">
-                  <p><%= review.rating %> / 5
-                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-star btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                  </p>
+                  <p>Rating : <%= review.rating %> / 5 </p>
                 </div>
                 <div class="review-block-description">
                   <p><%= review.description %></p>
@@ -62,7 +47,7 @@
 </div>
 <div class="container">
   <%= simple_form_for([ @user, @review ]) do |f| %>
-    <%= f.input :rating%>
+    <%= f.input :rating, collection: 0..5 %>
     <%= f.input :description, as: :text %>
     <%= f.button :submit %>
   <% end %>

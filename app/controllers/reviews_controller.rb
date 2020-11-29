@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     authorize @user
     @review = Review.new(review_params)
     @review.user = @user
-    @review.creator = current_user
+    @review.creator_id = current_user
     if @review.save
       redirect_to user_path(@user)
     else
