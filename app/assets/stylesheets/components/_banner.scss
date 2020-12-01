@@ -17,6 +17,8 @@
   -webkit-text-fill-color: #fecd1a; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: white;
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
 .search {
@@ -43,4 +45,80 @@
   border: 1px solid #fecd1a;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+    height: 90vh;
+  }
+  .banner h1 {
+    font-size: 55px;
+    line-height: 90px;
+  }
+
+  .search {
+    margin: 10px;
+    width: 280px;
+    margin-top: -200px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+  .banner h1 {
+    font-size: 100px;
+    line-height: 120px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+  .banner h1 {
+    font-size: 110px;
+    line-height: 120px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+  .banner h1 {
+    font-size: 120px;
+    line-height: 130px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+  .banner h1 {
+    font-size: 120px;
+    line-height: 130px;
+  }
 }

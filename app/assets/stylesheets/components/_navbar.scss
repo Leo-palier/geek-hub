@@ -40,3 +40,24 @@
   top: 0px;
   right: 40px;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 392px) {
+  .navbar-lewagon .navbar-brand {
+    padding: 6px;
+    margin: 6px;
+    width: 85px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 392px) and (max-width: 590px) {
+  .navbar-lewagon .navbar-brand {
+    padding: 7px;
+    margin: 7px;
+    width: 110px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+}
